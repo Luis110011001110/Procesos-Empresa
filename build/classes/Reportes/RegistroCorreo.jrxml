@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0a8add33-7c39-4fe5-8246-a729ab3c24f5">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="86"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     pedido.`id_pedido` AS pedido_id_pedido,
+     pedido.`remitente` AS pedido_remitente,
+     pedido.`destinatario` AS pedido_destinatario,
+     pedido.`asunto` AS pedido_asunto,
+     pedido.`descripcion` AS pedido_descripcion
+FROM
+     `pedido` pedido]]>
+	</queryString>
+	<field name="pedido_id_pedido" class="java.lang.Integer"/>
+	<field name="pedido_remitente" class="java.lang.String"/>
+	<field name="pedido_destinatario" class="java.lang.String"/>
+	<field name="pedido_asunto" class="java.lang.String"/>
+	<field name="pedido_descripcion" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="110" splitType="Stretch">
+			<image>
+				<reportElement x="472" y="0" width="83" height="52" uuid="548c3b13-6159-497b-90aa-ec47abd276b5"/>
+				<imageExpression><![CDATA["C:\\Plastimar\\img\\log11.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="41" y="0" width="83" height="52" uuid="215507f3-bd62-499a-ba53-507b88020658"/>
+				<imageExpression><![CDATA["C:\\Plastimar\\img\\log11.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="211" y="59" width="177" height="20" uuid="f8da0c51-7b90-4fe7-a9a9-5bc29a839367"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REGISTRO DE CORREOS]]></text>
+			</staticText>
+			<image>
+				<reportElement x="248" y="0" width="67" height="54" uuid="78777f48-9ed3-4683-94d3-9410087530f6"/>
+				<imageExpression><![CDATA["C:\\Plastimar\\img\\CORREO.PNG"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="11" y="0" width="1" height="110" forecolor="#00CCFF" uuid="abe9c405-d038-45c0-bb98-fa52a1ab3510"/>
+				<graphicElement>
+					<pen lineWidth="20.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="455" y="90" width="100" height="20" uuid="b6cd0fec-17ef-4034-88be-491078ce865a"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<line>
+				<reportElement x="11" y="0" width="1" height="35" forecolor="#00CCFF" uuid="f050ef5e-5546-4b2c-8df5-4b1ad1f54c63"/>
+				<graphicElement>
+					<pen lineWidth="20.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="41" y="0" width="514" height="35" uuid="a255f29e-8e58-4b5f-b20a-f0c24ad02442"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[A continuacion se muestra los correos de lo que se ha trabajado dentro de la empresa, en cuanto a pedidos y entregas de productos.]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="41" y="0" width="72" height="20" uuid="2916384a-23ec-4d12-a43e-572508938a20"/>
+				<textElement textAlignment="Justified">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="127" y="0" width="111" height="20" uuid="55e1fd77-61e1-4628-b512-5f69f7c50608"/>
+				<textElement textAlignment="Justified">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Remitente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="248" y="0" width="101" height="20" uuid="dee7ca43-2436-4ea9-949b-792c61b2ca81"/>
+				<textElement textAlignment="Justified">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Destinatario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="367" y="0" width="93" height="20" uuid="188b6b59-22d2-4684-b83d-31cfa0879274"/>
+				<textElement textAlignment="Justified">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Asunto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="472" y="0" width="83" height="20" uuid="3b695b6a-d738-4927-96df-cae7573d468e"/>
+				<textElement textAlignment="Justified">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripción]]></text>
+			</staticText>
+			<line>
+				<reportElement x="11" y="0" width="1" height="26" forecolor="#00CCFF" uuid="a7489ef2-6858-4eee-8b56-4d820f8217aa"/>
+				<graphicElement>
+					<pen lineWidth="20.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="40" splitType="Stretch">
+			<textField>
+				<reportElement x="41" y="0" width="72" height="37" uuid="c2e8529e-36fe-47c8-8162-e0c2fa68e217"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{pedido_id_pedido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="127" y="1" width="111" height="36" uuid="70f25c49-6211-465c-a8ac-7749951aeb41"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{pedido_remitente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="248" y="0" width="101" height="37" uuid="4ed05b79-6270-42dc-86ab-9f4460718360"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{pedido_destinatario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="367" y="0" width="93" height="37" uuid="4af3ccd9-41b9-4e28-a25c-c69b10eac76c"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{pedido_asunto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="472" y="0" width="83" height="37" uuid="68e33897-17b2-4fef-8037-8907116701de"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{pedido_descripcion}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="11" y="0" width="1" height="40" forecolor="#00CCFF" uuid="265f26a5-e090-4011-a40c-b7d7165b1c79"/>
+				<graphicElement>
+					<pen lineWidth="20.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="117" y="0" width="1" height="40" uuid="ce9f909f-5109-48af-b5f0-116bc524f02d"/>
+			</line>
+			<line>
+				<reportElement x="241" y="0" width="1" height="40" uuid="62eca523-c4e8-47f9-b040-63863790fbb4"/>
+			</line>
+			<line>
+				<reportElement x="357" y="0" width="1" height="40" uuid="2436b112-71b9-4296-a9b4-6e02762db206"/>
+			</line>
+			<line>
+				<reportElement x="468" y="1" width="1" height="39" uuid="a086c389-d21d-4b0c-8d1e-a63661237bbd"/>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="86861085-890e-4b28-8496-1e4bf307230f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     almacen.`id_almacen` AS almacen_id_almacen,
+     almacen.`nombre_almacen` AS almacen_nombre_almacen,
+     almacen.`descripcion` AS almacen_descripcion,
+     categorias.`nombre_categoria` AS categorias_nombre_categoria,
+     categorias.`descripcion` AS categorias_descripcion
+FROM
+     `almacen` almacen,
+     `categorias` categorias]]>
+	</queryString>
+	<field name="almacen_id_almacen" class="java.lang.Integer"/>
+	<field name="almacen_nombre_almacen" class="java.lang.String"/>
+	<field name="almacen_descripcion" class="java.lang.String"/>
+	<field name="categorias_nombre_categoria" class="java.lang.String"/>
+	<field name="categorias_descripcion" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="135" splitType="Stretch">
+			<staticText>
+				<reportElement x="236" y="110" width="106" height="25" uuid="7ab9fa13-abd4-4e91-bfd3-21bd7c3a0a94"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ALMACENES]]></text>
+			</staticText>
+			<line>
+				<reportElement x="11" y="0" width="1" height="135" forecolor="#00CCFF" uuid="d79de7cc-096a-4658-9305-1e913592001c"/>
+				<graphicElement>
+					<pen lineWidth="20.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<image>
+				<reportElement x="222" y="0" width="142" height="110" uuid="9807a4aa-23fb-4d58-b789-de892d061abd"/>
+				<imageExpression><![CDATA["C:\\Plastimar\\img\\ALMACEN.PNG"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="441" y="0" width="114" height="84" uuid="3941dcae-712a-4bd5-a9a2-1268e761e5cb"/>
+				<imageExpression><![CDATA["C:\\Plastimar\\img\\log11.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="38" y="0" width="114" height="84" uuid="3ab01fa6-611a-4883-b50f-6d2b2aaf8700"/>
+				<imageExpression><![CDATA["C:\\Plastimar\\img\\log11.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<line>
+				<reportElement x="11" y="0" width="1" height="35" forecolor="#00CCFF" uuid="5e1b2e65-de1d-4a46-b158-3f9478cdf7f6"/>
+				<graphicElement>
+					<pen lineWidth="20.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="38" y="0" width="73" height="20" uuid="477c0f08-d3da-4470-8be4-8e2592729e8a"/>
+				<text><![CDATA[Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="111" y="0" width="111" height="20" uuid="87c34c5e-2b3b-48f7-b122-984b014b7b35"/>
+				<text><![CDATA[Nombre del almacen]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="222" y="0" width="91" height="20" uuid="df062f78-f7cf-4105-a7b1-281d7ab10004"/>
+				<text><![CDATA[Descripción]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="0" width="111" height="20" uuid="a59d32d2-6752-46aa-84f0-8a1bce293b07"/>
+				<text><![CDATA[Categorías]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="424" y="0" width="131" height="20" uuid="2f8db066-b911-43a6-841a-169620b0f4c1"/>
+				<text><![CDATA[Descripcion de categoria]]></text>
+			</staticText>
+			<line>
+				<reportElement x="11" y="0" width="1" height="25" forecolor="#00CCFF" uuid="12c9579e-7bb8-492a-8f49-81265bf6b6f2"/>
+				<graphicElement>
+					<pen lineWidth="20.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="38" y="0" width="73" height="20" uuid="d0d94db3-3b90-4e20-9e0c-928cef783279"/>
+				<textFieldExpression><![CDATA[$F{almacen_id_almacen}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="111" y="0" width="111" height="20" uuid="381159b0-d228-47c4-9991-1a54dbe56337"/>
+				<textFieldExpression><![CDATA[$F{almacen_nombre_almacen}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="222" y="0" width="91" height="20" uuid="da7ce513-e981-4033-9263-11dc932813fa"/>
+				<textFieldExpression><![CDATA[$F{almacen_descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="313" y="1" width="111" height="20" uuid="0f778bba-3a44-46f3-82b8-b5516d19bc8f"/>
+				<textFieldExpression><![CDATA[$F{categorias_nombre_categoria}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="424" y="0" width="111" height="20" uuid="27bd7418-fe07-4e82-a20d-940a615da62e"/>
+				<textFieldExpression><![CDATA[$F{categorias_descripcion}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="11" y="0" width="1" height="20" forecolor="#00CCFF" uuid="5108304d-d22d-40dd-9f6e-c975b44a5b0e"/>
+				<graphicElement>
+					<pen lineWidth="20.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="17070a4c-3fad-4a62-9ef3-d70950ae359b">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="406"/>
+	<queryString>
+		<![CDATA[SELECT
+     empresa.`id_empresa` AS empresa_id_empresa,
+     empresa.`descripcion` AS empresa_descripcion,
+     empresa.`mision` AS empresa_mision,
+     empresa.`vision` AS empresa_vision,
+     empresa.`ubicacion` AS empresa_ubicacion,
+     empresa.`web` AS empresa_web,
+     empresa.`rfc` AS empresa_rfc
+FROM
+     `empresa` empresa]]>
+	</queryString>
+	<field name="empresa_id_empresa" class="java.lang.Integer"/>
+	<field name="empresa_descripcion" class="java.lang.String"/>
+	<field name="empresa_mision" class="java.lang.String"/>
+	<field name="empresa_vision" class="java.lang.String"/>
+	<field name="empresa_ubicacion" class="java.lang.String"/>
+	<field name="empresa_web" class="java.lang.String"/>
+	<field name="empresa_rfc" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="94" splitType="Stretch">
+			<image>
+				<reportElement x="202" y="0" width="166" height="94" uuid="acf01833-2fc0-408e-94bf-649236d14c1d"/>
+				<imageExpression><![CDATA["C:\\Plastimar\\img\\log11.png"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="10" y="0" width="1" height="94" forecolor="#00CCFF" uuid="11ce7ae6-73f7-4239-a181-7adda097d1ff"/>
+				<graphicElement>
+					<pen lineWidth="20.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="44" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="390" y="24" width="164" height="20" uuid="1f4ff74b-c64a-4291-827c-df0a525d9c6e"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="10" y="0" width="1" height="44" forecolor="#00CCFF" uuid="a762fd72-3061-4de3-90c6-7c4f60d83059"/>
+				<graphicElement>
+					<pen lineWidth="20.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="113" splitType="Stretch">
+			<staticText>
+				<reportElement x="43" y="0" width="100" height="20" uuid="ff5f893e-33dc-444b-92a3-1b3a1ce523f0"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripción]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="43" y="20" width="511" height="79" uuid="40138d9a-3e3e-4f47-b2ed-dbd17b6628d4"/>
+				<textElement textAlignment="Justified">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{empresa_descripcion}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="10" y="0" width="1" height="112" forecolor="#00CCFF" uuid="fac5a97e-855c-41cc-b4fa-9d33acffc3af"/>
+				<graphicElement>
+					<pen lineWidth="20.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="221" splitType="Stretch">
+			<staticText>
+				<reportElement x="43" y="0" width="100" height="20" uuid="43d62256-4ce3-411e-b895-4c8851cad227"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Misión]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="43" y="20" width="512" height="94" uuid="9b8749dc-f2b3-4499-8a2a-521f968fa7f6"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{empresa_mision}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="43" y="114" width="100" height="20" uuid="b811fbac-62cf-4ad2-bb86-f657c08fd068"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Visión]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="43" y="134" width="512" height="87" uuid="dbdc6f6b-4c14-4759-9a82-2ef4577b087a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{empresa_vision}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="10" y="0" width="1" height="221" forecolor="#00CCFF" uuid="4f15cbbf-1a57-43e3-8a1d-705870503840"/>
+				<graphicElement>
+					<pen lineWidth="20.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<summary>
+		<band height="95" splitType="Stretch">
+			<textField>
+				<reportElement x="43" y="34" width="135" height="41" uuid="dd7083ff-407a-470e-a1ba-1701eca31129"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{empresa_ubicacion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="43" y="0" width="135" height="20" uuid="61fb5d64-499b-41da-bf41-477cce601f08"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ubicación]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="219" y="34" width="126" height="41" uuid="337f278f-c0db-4c81-8842-5b0d2aa785b1"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{empresa_web}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="219" y="0" width="126" height="20" uuid="acdcc8da-aaf3-49bb-8e4a-98f27a2ec239"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Web]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="380" y="34" width="134" height="41" uuid="ef90683d-6569-4a8b-8a42-c7d70affc710"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{empresa_rfc}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="380" y="0" width="134" height="20" uuid="a5e4469e-17a8-4ca4-8beb-1064534072ac"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RFC]]></text>
+			</staticText>
+			<line>
+				<reportElement x="10" y="0" width="1" height="95" forecolor="#00CCFF" uuid="31652b6d-048f-495a-882f-8698183adbe7"/>
+				<graphicElement>
+					<pen lineWidth="20.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

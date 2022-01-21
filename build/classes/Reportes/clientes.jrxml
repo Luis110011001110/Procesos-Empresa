@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b0cac527-7ff0-484f-9328-a85da07526c8">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     clientes.`id_cliente` AS clientes_id_cliente,
+     clientes.`nombre` AS clientes_nombre,
+     clientes.`apellido_paterno` AS clientes_apellido_paterno,
+     clientes.`apellido_materno` AS clientes_apellido_materno,
+     clientes.`correo_contacto` AS clientes_correo_contacto
+FROM
+     `clientes` clientes]]>
+	</queryString>
+	<field name="clientes_id_cliente" class="java.lang.Integer"/>
+	<field name="clientes_nombre" class="java.lang.String"/>
+	<field name="clientes_apellido_paterno" class="java.lang.String"/>
+	<field name="clientes_apellido_materno" class="java.lang.String"/>
+	<field name="clientes_correo_contacto" class="java.lang.String"/>
+	<title>
+		<band height="134" splitType="Stretch">
+			<line>
+				<reportElement x="11" y="0" width="1" height="134" forecolor="#00CCFF" uuid="1a5cba0b-b1b7-4723-bdc2-5f1d6316ba15"/>
+				<graphicElement>
+					<pen lineWidth="20.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<image>
+				<reportElement x="180" y="31" width="233" height="93" uuid="199eff93-1568-4062-9fb4-1fb06975400c"/>
+				<imageExpression><![CDATA["C:\\Plastimar\\img\\clientes.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="444" y="0" width="111" height="81" uuid="dc430d9e-86ad-40f0-a930-059e07aa29a4"/>
+				<imageExpression><![CDATA["C:\\Plastimar\\img\\log11.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="30" y="0" width="111" height="81" uuid="27fa3ef9-1faa-4c7b-b7a7-476a19a50c60"/>
+				<imageExpression><![CDATA["C:\\Plastimar\\img\\log11.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement x="42" y="0" width="425" height="20" uuid="4fe608d9-d0c2-4a1e-8baa-bba54b28198b"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Esta lista permite a plastimar a revisar quienes son sus clientes principales.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="11" y="0" width="1" height="36" forecolor="#00CCFF" uuid="005c8b6a-d9ef-44a4-af66-a82cf0869591"/>
+				<graphicElement>
+					<pen lineWidth="20.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="42" y="0" width="69" height="20" uuid="3d24274e-f455-4c7f-a0cc-d72d24363b17"/>
+				<text><![CDATA[Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="111" y="0" width="111" height="20" uuid="8182bdcd-f899-46f8-a0af-d2b2a42be1ae"/>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="222" y="0" width="111" height="20" uuid="5558b0d0-f681-4844-9948-ed7d6f656db3"/>
+				<text><![CDATA[Apellido paterno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="333" y="0" width="111" height="20" uuid="f6a481ab-5934-4493-9d40-360ad347f30c"/>
+				<text><![CDATA[Apellido materno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="444" y="0" width="111" height="20" uuid="c81de888-0f9b-43ef-a4ba-af95d338519c"/>
+				<text><![CDATA[Correo]]></text>
+			</staticText>
+			<line>
+				<reportElement x="11" y="0" width="1" height="22" forecolor="#00CCFF" uuid="06333013-d91d-4ff2-bcc3-6681106acdbd"/>
+				<graphicElement>
+					<pen lineWidth="20.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<textField>
+				<reportElement x="42" y="0" width="69" height="20" uuid="cd0dbbdb-9f41-4acc-bf9a-8fa97767fa63"/>
+				<textFieldExpression><![CDATA[$F{clientes_id_cliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="111" y="0" width="111" height="20" uuid="709ff84f-36f1-4df9-9881-a169f7597de2"/>
+				<textFieldExpression><![CDATA[$F{clientes_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="222" y="0" width="111" height="20" uuid="20a72731-0fcd-41fe-937b-d2d34d94db4d"/>
+				<textFieldExpression><![CDATA[$F{clientes_apellido_paterno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="333" y="0" width="111" height="20" uuid="8374fa13-34c1-43c0-92bd-fb7489ea31b4"/>
+				<textFieldExpression><![CDATA[$F{clientes_apellido_materno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="0" width="111" height="20" uuid="1e3c1cab-04c9-4fb2-8afb-274bf7d96e40"/>
+				<textFieldExpression><![CDATA[$F{clientes_correo_contacto}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="11" y="0" width="1" height="27" forecolor="#00CCFF" uuid="694fc3b1-5a76-4361-8561-9e19dbaf97be"/>
+				<graphicElement>
+					<pen lineWidth="20.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

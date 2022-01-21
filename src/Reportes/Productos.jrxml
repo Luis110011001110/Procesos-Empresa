@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Productos" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bc1ce900-d5d6-4bed-af37-1e38005addb4">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter3.xml"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     productos.`id_productos` AS productos_id_productos,
+     productos.`nombre_producto` AS productos_nombre_producto,
+     productos.`descripcion` AS productos_descripcion,
+     productos.`precio_fabricacion` AS productos_precio_fabricacion,
+     productos.`precio_venta` AS productos_precio_venta
+FROM
+     `productos` productos]]>
+	</queryString>
+	<field name="productos_id_productos" class="java.lang.Integer"/>
+	<field name="productos_nombre_producto" class="java.lang.String"/>
+	<field name="productos_descripcion" class="java.lang.String"/>
+	<field name="productos_precio_fabricacion" class="java.lang.Float"/>
+	<field name="productos_precio_venta" class="java.lang.Float"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="164" splitType="Stretch">
+			<line>
+				<reportElement x="11" y="0" width="1" height="163" forecolor="#00CCFF" uuid="bf7443ff-8bb1-4dc1-9815-d7c92c82352c"/>
+				<graphicElement>
+					<pen lineWidth="20.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<image>
+				<reportElement x="31" y="0" width="524" height="163" uuid="1212e5a8-e441-4595-9691-5f534a480e8f"/>
+				<imageExpression><![CDATA["C:\\Plastimar\\img\\producots.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="42" splitType="Stretch">
+			<line>
+				<reportElement x="3" y="2" width="553" height="1" uuid="9f196dcb-c1e7-45d4-a4fc-e67bf90fa3aa"/>
+			</line>
+			<staticText>
+				<reportElement x="46" y="3" width="462" height="22" uuid="f473d242-3309-485c-a722-83aaea0e1447"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Esta es la lista de los productos que se manejan en plastimar]]></text>
+			</staticText>
+			<line>
+				<reportElement x="11" y="2" width="1" height="40" forecolor="#00CCFF" uuid="086f60c4-1aaa-4d8a-b5c3-675a3f5089c9"/>
+				<graphicElement>
+					<pen lineWidth="20.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<staticText>
+				<reportElement x="48" y="0" width="111" height="20" uuid="6944781d-5460-4edf-a5e7-d41695835893"/>
+				<text><![CDATA[Id del producto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="159" y="0" width="111" height="20" uuid="e20d03b7-c790-4cf8-908b-16e31cf3c657"/>
+				<text><![CDATA[Nombre del producto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="0" width="89" height="20" uuid="0a5e1db8-22e4-4f45-aebb-150f45deb852"/>
+				<text><![CDATA[Descripcion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="359" y="0" width="111" height="20" uuid="8214de7f-ed4d-4403-affd-7ce1483d83d4"/>
+				<text><![CDATA[Precio de fabricación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="470" y="0" width="85" height="20" uuid="8ce0abb2-95ee-410f-8413-58fd17940ced"/>
+				<text><![CDATA[Presio de venta]]></text>
+			</staticText>
+			<line>
+				<reportElement x="11" y="0" width="1" height="29" forecolor="#00CCFF" uuid="7152e2bb-75bb-464a-9174-e8d9b14ed0d1"/>
+				<graphicElement>
+					<pen lineWidth="20.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="46" y="0" width="111" height="20" uuid="5064e893-1998-42db-a052-77a4931f060d"/>
+				<textFieldExpression><![CDATA[$F{productos_id_productos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="159" y="0" width="111" height="20" uuid="4780ca55-a85d-4376-9bfb-e8c1e310ac4a"/>
+				<textFieldExpression><![CDATA[$F{productos_nombre_producto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="0" width="89" height="20" uuid="7d2a2ff5-dc0a-4796-8f9c-ec8a9eff8939"/>
+				<textFieldExpression><![CDATA[$F{productos_descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="359" y="0" width="111" height="20" uuid="9554f85f-3c46-4de0-a5e9-d3395fb6566a"/>
+				<textFieldExpression><![CDATA[$F{productos_precio_fabricacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="470" y="0" width="85" height="20" uuid="e0bda934-e49c-4f16-970d-caa8e39bb1bf"/>
+				<textFieldExpression><![CDATA[$F{productos_precio_venta}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="11" y="1" width="1" height="22" forecolor="#00CCFF" uuid="a5ca6590-6c44-4a92-a956-0c6ac5f23f61"/>
+				<graphicElement>
+					<pen lineWidth="20.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<summary>
+		<band height="29" splitType="Prevent">
+			<line>
+				<reportElement x="11" y="0" width="1" height="29" forecolor="#00CCFF" uuid="1547c85a-320b-48c3-9033-52fb6170fcee"/>
+				<graphicElement>
+					<pen lineWidth="20.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="52f3345d-2b9c-4db5-b2ac-5b8c91962414">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     proveedores.`id_proveedor` AS proveedores_id_proveedor,
+     proveedores.`nombre_proveedor` AS proveedores_nombre_proveedor,
+     proveedores.`descripcion` AS proveedores_descripcion,
+     proveedores.`telefono` AS proveedores_telefono,
+     proveedores.`correo` AS proveedores_correo,
+     proveedores.`web` AS proveedores_web
+FROM
+     `proveedores` proveedores]]>
+	</queryString>
+	<field name="proveedores_id_proveedor" class="java.lang.Integer"/>
+	<field name="proveedores_nombre_proveedor" class="java.lang.String"/>
+	<field name="proveedores_descripcion" class="java.lang.String"/>
+	<field name="proveedores_telefono" class="java.lang.String"/>
+	<field name="proveedores_correo" class="java.lang.String"/>
+	<field name="proveedores_web" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<line>
+				<reportElement x="11" y="0" width="1" height="132" forecolor="#00CCFF" uuid="ec48dbd4-68bd-41b0-9fab-e2176ac45fd0"/>
+				<graphicElement>
+					<pen lineWidth="20.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="180" y="23" width="215" height="56" uuid="d850b55e-0a88-4e2a-ab0b-adea8fe9d34e"/>
+				<textElement textAlignment="Center">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LISTA DE PROVEEDORES DE PLASTIMAR]]></text>
+			</staticText>
+			<image>
+				<reportElement x="30" y="0" width="91" height="79" uuid="eae7add0-cc20-4df6-8679-e584506899a9"/>
+				<imageExpression><![CDATA["C:\\Plastimar\\img\\prov.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="455" y="0" width="100" height="79" uuid="a6d062cb-07dd-4f46-a976-0f10b647a323"/>
+				<imageExpression><![CDATA["C:\\Plastimar\\img\\log11.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement x="39" y="0" width="516" height="23" uuid="37d33b90-8ac9-4bb1-879f-62b1fde1e099"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[A continuacion se muestra la lista de proveedores de plastimar]]></text>
+			</staticText>
+			<line>
+				<reportElement x="11" y="0" width="1" height="27" forecolor="#00CCFF" uuid="929d0a9d-8e0d-4aa5-a8b2-6f435aea0b75"/>
+				<graphicElement>
+					<pen lineWidth="20.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="46" y="0" width="79" height="20" uuid="f1737d69-c984-48eb-8a77-35132ccede94"/>
+				<text><![CDATA[Id_proveedor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="125" y="0" width="73" height="20" uuid="629ff5f6-e9a2-474f-9f8c-3d61505c4aae"/>
+				<text><![CDATA[Proveedor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="198" y="0" width="92" height="20" uuid="e70dcd45-d1b3-4d4b-9241-a507b698bbb4"/>
+				<text><![CDATA[descripcion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="298" y="0" width="84" height="20" uuid="9c4e1e5f-d14e-4cc9-84a2-71aa789ce39a"/>
+				<text><![CDATA[telefono]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="382" y="0" width="92" height="20" uuid="6f1a5629-3f13-41bb-b571-150095b4f11f"/>
+				<text><![CDATA[correo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="474" y="0" width="78" height="20" uuid="5f3c05fe-0d58-4bb6-aadf-cd8f8e659e6b"/>
+				<text><![CDATA[web]]></text>
+			</staticText>
+			<line>
+				<reportElement x="11" y="0" width="1" height="20" forecolor="#00CCFF" uuid="6729997a-54d0-49e1-ba8f-13f3a3858cfb"/>
+				<graphicElement>
+					<pen lineWidth="20.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="46" y="0" width="75" height="20" uuid="a6018519-7056-430f-be34-fed09b9c22ab"/>
+				<textFieldExpression><![CDATA[$F{proveedores_id_proveedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="125" y="0" width="73" height="20" uuid="95e49904-94df-4663-80da-99570f06753d"/>
+				<textFieldExpression><![CDATA[$F{proveedores_nombre_proveedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="206" y="0" width="92" height="20" uuid="83c8cc04-dc3b-4b29-b163-a8490562f91f"/>
+				<textFieldExpression><![CDATA[$F{proveedores_descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="298" y="0" width="84" height="20" uuid="c35abb94-c7a9-441b-a391-caeb321718e0"/>
+				<textFieldExpression><![CDATA[$F{proveedores_telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="382" y="0" width="92" height="20" uuid="ba349f08-73da-450d-9476-1cbbcf6cd847"/>
+				<textFieldExpression><![CDATA[$F{proveedores_correo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="474" y="0" width="78" height="20" uuid="a5d08034-f073-4d87-b2c2-23f40245a560"/>
+				<textFieldExpression><![CDATA[$F{proveedores_web}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="11" y="0" width="1" height="31" forecolor="#00CCFF" uuid="c2e9ec9a-34f5-4e4e-93e1-6f9b27d78ded"/>
+				<graphicElement>
+					<pen lineWidth="20.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

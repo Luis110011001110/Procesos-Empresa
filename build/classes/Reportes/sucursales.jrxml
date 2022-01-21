@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6524f7c0-2344-4535-aec4-3221dec75b32">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     sucursal.`id_sucursal` AS sucursal_id_sucursal,
+     sucursal.`nombre_sucursal` AS sucursal_nombre_sucursal,
+     sucursal.`tipo` AS sucursal_tipo,
+     sucursal.`estado` AS sucursal_estado,
+     sucursal.`direccion` AS sucursal_direccion,
+     sucursal.`telefono` AS sucursal_telefono,
+     sucursal.`correo` AS sucursal_correo
+FROM
+     `sucursal` sucursal]]>
+	</queryString>
+	<field name="sucursal_id_sucursal" class="java.lang.Integer"/>
+	<field name="sucursal_nombre_sucursal" class="java.lang.String"/>
+	<field name="sucursal_tipo" class="java.lang.Integer"/>
+	<field name="sucursal_estado" class="java.lang.Integer"/>
+	<field name="sucursal_direccion" class="java.lang.String"/>
+	<field name="sucursal_telefono" class="java.lang.Integer"/>
+	<field name="sucursal_correo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="111" splitType="Stretch">
+			<line>
+				<reportElement x="11" y="0" width="1" height="111" forecolor="#00CCFF" uuid="006ce075-5262-43f3-bc96-2ffb6a40f6cc"/>
+				<graphicElement>
+					<pen lineWidth="20.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<image>
+				<reportElement x="191" y="2" width="206" height="109" uuid="91a70eb9-6439-4e26-a6b8-38ab2cbf3888"/>
+				<imageExpression><![CDATA["C:\\Plastimar\\img\\log11.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="39" y="0" width="356" height="20" uuid="e9ed2fee-4946-4b09-b67f-139cd592dfd8"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lista de sucursales de la empresa PLASTIMAR]]></text>
+			</staticText>
+			<line>
+				<reportElement x="11" y="0" width="1" height="35" forecolor="#00CCFF" uuid="30db53be-e3bb-4f7f-9b35-4be0059b2b8f"/>
+				<graphicElement>
+					<pen lineWidth="20.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="24" splitType="Stretch">
+			<staticText>
+				<reportElement x="39" y="0" width="57" height="20" uuid="b23e4884-03a1-43e1-9cda-54202566f29b"/>
+				<text><![CDATA[Id_sucursal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="96" y="0" width="62" height="20" uuid="2850db56-38a6-4584-b8f6-6c940470b69b"/>
+				<text><![CDATA[Sucursal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="158" y="0" width="79" height="20" uuid="3649cb9b-a576-4341-8601-fc5ece44352a"/>
+				<text><![CDATA[Tipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="237" y="0" width="79" height="20" uuid="5a9e96d7-5e6e-471b-8922-afd75c13243a"/>
+				<text><![CDATA[Estado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="316" y="0" width="79" height="20" uuid="6cf40a9b-23bb-4f65-b6ec-c103706121d8"/>
+				<text><![CDATA[Direccion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="397" y="0" width="79" height="20" uuid="9b5d7462-fda0-41f6-a01c-90952d162ae4"/>
+				<text><![CDATA[Telefono]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="476" y="0" width="79" height="20" uuid="d1bee12c-3dae-4dc6-882e-5340ec194658"/>
+				<text><![CDATA[Correo]]></text>
+			</staticText>
+			<line>
+				<reportElement x="11" y="0" width="1" height="24" forecolor="#00CCFF" uuid="5008a896-b06c-4bd1-a5d3-50e87378a8ba"/>
+				<graphicElement>
+					<pen lineWidth="20.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="29" splitType="Stretch">
+			<textField>
+				<reportElement x="39" y="0" width="57" height="20" uuid="ef93f615-cb18-4dd4-893f-5678094ccc25"/>
+				<textFieldExpression><![CDATA[$F{sucursal_id_sucursal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="96" y="0" width="62" height="20" uuid="cc710c3b-b786-4636-b580-e899fb860427"/>
+				<textFieldExpression><![CDATA[$F{sucursal_nombre_sucursal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="158" y="0" width="79" height="20" uuid="d54da998-b7f0-41dd-99d6-1adabef816e8"/>
+				<textFieldExpression><![CDATA[$F{sucursal_tipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="0" width="79" height="20" uuid="66c77d1f-30d9-4612-8952-31ca8af9bd93"/>
+				<textFieldExpression><![CDATA[$F{sucursal_estado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="316" y="0" width="79" height="20" uuid="8575d80d-6512-415c-bdd0-37451ff205a4"/>
+				<textFieldExpression><![CDATA[$F{sucursal_direccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="395" y="0" width="79" height="20" uuid="807d410f-dd5b-49cd-94e2-5266a8daf533"/>
+				<textFieldExpression><![CDATA[$F{sucursal_telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="474" y="0" width="79" height="20" uuid="9a279045-9648-4d57-ae47-e8779be6cd23"/>
+				<textFieldExpression><![CDATA[$F{sucursal_correo}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="11" y="0" width="1" height="29" forecolor="#00CCFF" uuid="c0de163c-acbe-46ef-84ee-9dce945d9eb7"/>
+				<graphicElement>
+					<pen lineWidth="20.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+</jasperReport>
